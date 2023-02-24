@@ -1,0 +1,18 @@
+.inputWrap {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 50px 50px ;
+    border-radius: 10px;
+}
+.input {
+    width: 200px;
+    margin-right: 20px;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-family: 'Inter';
+    font-size: 17px;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: rgb(67, 67, 67);
+    background-color: transparent;
+}
