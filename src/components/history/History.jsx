@@ -4,7 +4,7 @@ export default function History ({array, clearStorage}) {
         <div className='hisWrap'>
             <span className='hist'>Історія запитів</span>
             <div className='ttnWrap'>{
-                array?.map((el,i)=>{
+                array.map((el,i)=>{
                     return <div key={i}>{el}</div>
                 })
             }</div>

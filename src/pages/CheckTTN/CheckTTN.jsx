@@ -25,7 +25,7 @@ export default function CheckTTN() {
 
   useEffect(() => {
     const newArr = JSON.parse(localStorage.getItem("arr"));
-    setArray(newArr);
+    !newArr ? setArray([]) : setArray(newArr);
   }, []);
 
   useEffect(() => {
