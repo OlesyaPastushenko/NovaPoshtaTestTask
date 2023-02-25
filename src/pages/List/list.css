@@ -1,0 +1,26 @@
+.pages {
+    display: flex;
+}
+.loading {
+    padding: 20px;
+}
+.pageBtn {
+    width: 40px;
+    height: 40px;
+    outline: none;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.pageBtn:hover {
+    background-color: black;
+    color: white;
+}
+.page {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
