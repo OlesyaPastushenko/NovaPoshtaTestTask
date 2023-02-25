@@ -3,8 +3,7 @@ import {Link} from 'react-router-dom'
 import './navbar.css'
 export default function Navbar () {
     const [toggle, setToggle] = useState('true')
-    let location = window.location.pathname
-    console.log(toggle)
+
 
     return(
         <div className='nav'>

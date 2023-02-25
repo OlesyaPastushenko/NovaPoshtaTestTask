@@ -1,0 +1,15 @@
+.statusWrap {
+    margin-top: 20px;
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 50px 50px;
+}
+.h3 {
+    font-weight: 600;
+    height: 60px;
+}
+.ordinary {
+    font-weight: 400;
+}

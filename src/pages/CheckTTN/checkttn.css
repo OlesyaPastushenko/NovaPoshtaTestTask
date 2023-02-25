@@ -21,3 +21,6 @@
     background-size: cover;
     z-index: -20;
  }
+ .wrapSec {
+    display: flex;
+ }

@@ -10,9 +10,48 @@
     border-radius: 5px;
     padding: 15px 20px;
     font-family: 'Inter';
-    font-size: 17px;
+    font-size: 18px;
     outline: 0;
     border-width: 0 0 2px;
-    border-color: rgb(67, 67, 67);
+    border-color: rgb(18, 18, 18);
     background-color: transparent;
 }
+.btn {
+    height: 51px;
+    display: flex;
+    flex-direction: column;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: 2px solid black;
+    cursor:pointer;
+    border-radius: 30px;
+    color: black;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+    overflow: hidden;
+    padding: 15px 25px;
+    flex-shrink: 0;
+ }
+ .btn:hover {
+    background-color: black;
+ }
+ .btn:hover .spnBtn1{
+   margin-top: -32px;
+ }
+ .spnBtn1 {
+    transition: 0.3s;
+    margin-bottom: 15px;
+ }
+ .spnBtn2 {
+    transition: 0.3s;
+    color: white
+ }
+ .warning {
+    color: red;
+    font-size: 14px;
+    padding: 10px 20px;
+    height: 15px;
+
+ }
