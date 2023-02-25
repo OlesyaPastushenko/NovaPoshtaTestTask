@@ -50,7 +50,7 @@ export default function List () {
     },[count])
     return(
         <div className="cover">
-          <div className="h3">Список відделнь у Києві</div>
+          <div className="h3">Список відделень у Києві</div>
           {results.length < 1 ? <p className="loading">{loading}</p> :<Card results={results}/>}
           { error && <div>{error}</div>}
           <div className="page">
