@@ -12,7 +12,7 @@ export default function Navbar () {
     return(
         <div className='nav'>
         <div className='navbarwrap'> 
-            <div className='bkg' style={toggle ? {left:0} : {right:0}}></div>
+            <div className='bkg' style={toggle ? {left:0} : {left:100}}></div>
             <Link to='/' className='link'>
             <div className={toggle ? "navActive left" : "navItem left"} onClick={()=>setToggle(true)}>Перевірити ТТН</div>
             </Link>
