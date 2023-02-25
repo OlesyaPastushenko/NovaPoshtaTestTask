@@ -1,14 +1,15 @@
 .statusWrap {
     margin-top: 20px;
     width: 500px;
-    height: 300px;
+    min-height: 300px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 50px 50px;
+
 }
 .h3 {
     font-weight: 600;
-    height: 60px;
+    margin-bottom: 10px;
 }
 .ordinary {
     font-weight: 400;
@@ -16,4 +17,15 @@
 .st {
     padding: 0px;
     height: 20px;
+}
+@media screen and (max-width: 800px) {
+    .statusWrap {
+        width: 300px;
+        height: auto;
+        min-height: auto;
+    }
+    .st {
+        padding: 0px;
+        height: auto;
+    }
 }

@@ -14,7 +14,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: auto;
+    min-height: 100vh;
     padding: 150px 20px 150px 20px;
     background-image: url('./cover1.jpg');
     opacity: 1;
@@ -23,4 +23,9 @@
  }
  .wrapSec {
     display: flex;
+ }
+ @media screen and (max-width: 800px) {
+    .wrapSec {
+    flex-direction: column;
+    }
  }

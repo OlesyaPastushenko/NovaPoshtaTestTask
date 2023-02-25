@@ -57,7 +57,6 @@ export default function CheckTTN() {
       });
   };
   return (
-    <div>
       <div className="cover">
         <div className="wrapSec">
           <div>
@@ -67,6 +66,5 @@ export default function CheckTTN() {
           <History array={array} clearStorage={clearStorage} />
         </div>
       </div>
-    </div>
   );
 }

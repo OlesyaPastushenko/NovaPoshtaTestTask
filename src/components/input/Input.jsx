@@ -22,7 +22,7 @@ export default function Input ({fetchData, addItem, clearStatus,setError}) {
     const [value, setValue] = useState('')
     return(
         <div className='inputWrap'>
-            <div>
+            <div className="warningWrap">
             <input onClick={onClickHandle} value={value} onChange={(e)=>{setValue(e.target.value)}} type='text' className="input" placeholder="Номер ТТН"/>
             <p className="warning">{validMess}</p>
             </div>
