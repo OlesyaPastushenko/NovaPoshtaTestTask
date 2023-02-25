@@ -9,6 +9,7 @@ import env from "react-dotenv";
 export default function CheckTTN() {
   const [status, setStatus] = useState({});
   const [array, setArray] = useState([]);
+  const [error, setError] = useState('')
 
   const clearStatus = () => {
     setStatus('')
@@ -46,11 +47,13 @@ export default function CheckTTN() {
         },
       })
       .then(function (response) {
-        console.log(response.data.data[0])
+        let succes = response.data.success
+        console.log(succes)
+        !succes ? setError('Упс, щось пішло не так. Спробуйте пізніше') :
         setStatus(response.data.data[0]);
       })
       .catch(function (error) {
-        console.log(error);
+        setError(`Упс, щось пішло не так: ${error.message}`);
       });
   };
   return (
@@ -58,8 +61,8 @@ export default function CheckTTN() {
       <div className="cover">
         <div className="wrapSec">
           <div>
-            <Input fetchData={fetchData} addItem={addItem} clearStatus={clearStatus}/>
-            <Status status={status}/>
+            <Input fetchData={fetchData} addItem={addItem} clearStatus={clearStatus} setError={setError}/>
+            <Status status={status} error={error}/>
           </div>
           <History array={array} clearStorage={clearStorage} />
         </div>

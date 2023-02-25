@@ -2,7 +2,7 @@ import './history.css'
 export default function History ({array, clearStorage}) {
     return(
         <div className='hisWrap'>
-            <span>Історія запитів</span>
+            <span className='his'>Історія запитів</span>
             <div className='ttnWrap'>{
                 array.map((el,i)=>{
                     return <div key={i}>{el}</div>

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import './input.css'
-export default function Input ({fetchData, addItem, clearStatus}) {
+export default function Input ({fetchData, addItem, clearStatus,setError}) {
 
     const [validMess, setValidMess ] = useState('')
 
@@ -16,6 +16,7 @@ export default function Input ({fetchData, addItem, clearStatus}) {
     const onClickHandle = () => {
         clearStatus()
         setValidMess('')
+        setError('')
     }
 
     const [value, setValue] = useState('')

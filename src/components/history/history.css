@@ -9,6 +9,10 @@
     align-items: center;
 }
 .ttnWrap {
-    height: 320px;
-    padding: 20px 0px;
+    height: 280px;
+    margin: 20px 0px;
+    overflow:auto;
+}
+.his {
+    font-weight: 600;
 }
