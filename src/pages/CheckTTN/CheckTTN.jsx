@@ -10,6 +10,7 @@ export default function CheckTTN() {
   const [status, setStatus] = useState({});
   const [array, setArray] = useState([]);
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState("")
 
   const clearStatus = () => {
     setStatus('')
@@ -33,6 +34,7 @@ export default function CheckTTN() {
   }, [array]);
 
   const fetchData = async (value) => {
+    setLoading('Loading...')
     await axios
       .post("https://api.novaposhta.ua/v2.0/json/", {
         apiKey: env.API_KEY,
@@ -49,11 +51,13 @@ export default function CheckTTN() {
       .then(function (response) {
         let succes = response.data.success
         console.log(succes)
-        !succes ? setError('Упс, щось пішло не так. Спробуйте пізніше') :
+        !succes ? setError(`Упс, щось пішло не так: ${response.data.errors[0]}`) :
         setStatus(response.data.data[0]);
+        setLoading("");
       })
       .catch(function (error) {
         setError(`Упс, щось пішло не так: ${error.message}`);
+        setLoading('')
       });
   };
   return (
@@ -61,7 +65,7 @@ export default function CheckTTN() {
         <div className="wrapSec">
           <div>
             <Input fetchData={fetchData} addItem={addItem} clearStatus={clearStatus} setError={setError}/>
-            <Status status={status} error={error}/>
+            <Status status={status} error={error} loading={loading}/>
           </div>
           <History array={array} clearStorage={clearStorage} />
         </div>
