@@ -16,6 +16,9 @@
 .his {
     font-weight: 600;
 }
+.historyItem {
+    cursor: pointer;
+}
 @media screen and (max-width: 800px) {
     .hisWrap {
         width: 100%;

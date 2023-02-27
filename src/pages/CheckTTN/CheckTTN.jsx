@@ -11,6 +11,7 @@ export default function CheckTTN() {
   const [array, setArray] = useState([]);
   const [error, setError] = useState('')
   const [loading, setLoading] = useState("")
+  const [histValue, setHisValue] = useState('')
 
   const clearStatus = () => {
     setStatus('')
@@ -19,6 +20,7 @@ export default function CheckTTN() {
   const addItem = (el) => {
     setArray([...array, el]);
   };
+
   const clearStorage = () => {
     setArray([]);
     localStorage.setItem("arr", JSON.stringify([]));
@@ -32,6 +34,13 @@ export default function CheckTTN() {
   useEffect(() => {
     array.length > 0 && localStorage.setItem("arr", JSON.stringify(array));
   }, [array]);
+
+  const fetchHistory = (value) => {
+     setError('')
+     clearStatus()
+     setHisValue(value)
+     fetchData(value)
+  }
 
   const fetchData = async (value) => {
     setLoading('Loading...')
@@ -64,10 +73,10 @@ export default function CheckTTN() {
       <div className="cover">
         <div className="wrapSec">
           <div>
-            <Input fetchData={fetchData} addItem={addItem} clearStatus={clearStatus} setError={setError}/>
+            <Input fetchData={fetchData} addItem={addItem} clearStatus={clearStatus} setError={setError} histValue={histValue}/>
             <Status status={status} error={error} loading={loading}/>
           </div>
-          <History array={array} clearStorage={clearStorage} />
+          <History array={array} clearStorage={clearStorage} fetchHistory={fetchHistory}/>
         </div>
       </div>
   );

@@ -1,15 +1,23 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import './input.css'
-export default function Input ({fetchData, addItem, clearStatus,setError}) {
+export default function Input ({fetchData, addItem, clearStatus,setError, histValue}) {
 
     const [validMess, setValidMess ] = useState('')
-
+    const [value, setValue] = useState('')
+    
+    useEffect(()=> {
+       setValue(histValue)
+    }, [histValue])
  
 
     const onSubmitHandle = (value) => {
+        let item = {
+            value: value,
+            id: Date.now()
+        }
         const pattern = /^\d{14}$/
         !pattern.test(value) ? setValidMess('Потрібно ввести 14 цифр') :
-        fetchData(value) && addItem(value)
+        fetchData(value) && addItem(item)
         setValue('')
     }
     
@@ -19,7 +27,7 @@ export default function Input ({fetchData, addItem, clearStatus,setError}) {
         setError('')
     }
 
-    const [value, setValue] = useState('')
+
     return(
         <div className='inputWrap'>
             <div className="warningWrap">

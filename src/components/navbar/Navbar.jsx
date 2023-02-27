@@ -6,7 +6,7 @@ export default function Navbar () {
     
     useEffect(()=>{
         const location = window.location.pathname
-        location != '/' && setToggle(false)    
+        location !== '/' && setToggle(false)    
     },[])
 
     return(

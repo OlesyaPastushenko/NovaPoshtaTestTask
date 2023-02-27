@@ -4,7 +4,6 @@ import CheckTTN from './pages/CheckTTN/CheckTTN';
 import List from './pages/List/List';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import Navbar from './components/navbar/Navbar';
-import { useState } from 'react';
 
 
 function App() {
